@@ -1,10 +1,13 @@
 from flask import Flask
-
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "ola mundo"
+index_add_counter = 0
+
+@app.route("/count")
+def test():
+    global index_add_counter 
+    index_add_counter += 1
+    return str(index_add_counter)
 
 
 if __name__ == "__main__":
